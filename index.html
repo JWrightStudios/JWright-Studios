@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wright Crafts | Custom Creations</title>
+  <style>
+    :root {
+      --pink: #e91e63;
+      --gold: #d4af37;
+      --black: #111111;
+      --white: #ffffff;
+      --soft: #fff6fa;
+      --gray: #666666;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--black), #2a2a2a);
+      color: var(--white);
+      padding: 18px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .logo span { color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.4)), url('https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&w=1600&q=80') center/cover;
+      color: var(--white);
+      text-align: center;
+      padding: 90px 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: 14px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto 24px;
+      font-size: 1.05rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      margin: 6px;
+    }
+
+    .btn-primary {
+      background: var(--pink);
+      color: var(--white);
+    }
+
+    .btn-secondary {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    section {
+      padding: 60px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 36px;
+      font-size: 2rem;
+    }
+
+    .section-title span { color: var(--pink); }
+
+    .categories,
+    .products,
+    .reviews {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid #eee;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-content {
+      padding: 18px;
+    }
+
+    .price {
+      color: var(--pink);
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 10px 0;
+    }
+
+    .soft-section {
+      background: var(--soft);
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      align-items: center;
+    }
+
+    .about img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .contact-box {
+      max-width: 700px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      font-size: 1rem;
+    }
+
+    footer {
+      background: var(--black);
+      color: var(--white);
+      text-align: center;
+      padding: 25px 20px;
+    }
+
+    .small {
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 700px) {
+      .hero { padding: 70px 18px; }
+      .card img { height: 200px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Wright <span>Crafts</span></div>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#about">About</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="container">
+      <h1>Custom Crafts Made With Style</h1>
+      <p>Shop handmade party items, personalized gifts, event decor, and custom creations made to stand out.</p>
+      <a class="btn btn-primary" href="#shop">Shop Best Sellers</a>
+      <a class="btn btn-secondary" href="#contact">Request a Custom Order</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">Shop by <span>Category</span></h2>
+      <div class="categories">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=900&q=80" alt="Party Decor" />
+          <div class="card-content">
+            <h3>Party Decor</h3>
+            <p>Backdrops, treat tables, centerpieces, and event details that pop.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=900&q=80" alt="Custom Gifts" />
+          <div class="card-content">
+            <h3>Custom Gifts</h3>
+            <p>Personalized keepsakes for birthdays, weddings, baby showers, and more.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=900&q=80" alt="Apparel" />
+          <div class="card-content">
+            <h3>Custom Apparel</h3>
+            <p>T-shirts, matching sets, and wearable designs for every occasion.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="shop" class="soft-section">
+    <div class="container">
+      <h2 class="section-title">Best <span>Sellers</span></h2>
+      <div class="products">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=900&q=80" alt="Custom Party Bundle" />
+          <div class="card-content">
+            <h3>Custom Party Bundle</h3>
+            <p>Includes themed decor pieces customized to your event.</p>
+            <div class="price">From $85</div>
+            <a class="btn btn-primary" href="#contact">Order Now</a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80" alt="Personalized Gift Box" />
+          <div class="card-content">
+            <h3>Personalized Gift Box</h3>
+            <p>Elegant keepsake packaging with custom names, colors, and themes.</p>
+            <div class="price">From $40</div>
+            <a class="btn btn-primary" href="#contact">Order Now</a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=900&q=80" alt="Custom Shirt Set" />
+          <div class="card-content">
+            <h3>Custom Shirt Set</h3>
+            <p>Matching shirt designs for family events, reunions, and parties.</p>
+            <div class="price">From $25</div>
+            <a class="btn btn-primary" href="#contact">Order Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container about">
+      <div>
+        <h2 class="section-title" style="text-align:left; margin-bottom:18px;">About <span>Wright Crafts</span></h2>
+        <p>We create handmade and personalized products that make celebrations feel extra special. From party decor to custom gifts, every item is designed with care and creativity.</p>
+        <p class="small">Add your own story here so customers know who you are, what you create, and why your business is special.</p>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=1000&q=80" alt="Craft workspace" />
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews" class="soft-section">
+    <div class="container">
+      <h2 class="section-title">Customer <span>Love</span></h2>
+      <div class="reviews">
+        <div class="card"><div class="card-content"><p>“My custom party decor came out beautiful and got so many compliments.”</p><strong>- Happy Customer</strong></div></div>
+        <div class="card"><div class="card-content"><p>“Fast communication, great quality, and everything matched my theme perfectly.”</p><strong>- Repeat Customer</strong></div></div>
+        <div class="card"><div class="card-content"><p>“The personalized gift box was even prettier in person. I will definitely order again.”</p><strong>- New Client</strong></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Place a <span>Custom Order</span></h2>
+      <div class="contact-box">
+        <form>
+          <input type="text" placeholder="Your Name" />
+          <input type="email" placeholder="Your Email" />
+          <input type="text" placeholder="What do you want to order?" />
+          <textarea rows="5" placeholder="Tell me your theme, colors, quantity, and deadline"></textarea>
+          <button class="btn btn-primary" type="button">Send Inquiry</button>
+        </form>
+        <p class="small">Replace this form later with your real email form, Shopify link, Square checkout, or order form.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Wright Crafts. All rights reserved.</p>
+  </footer>
+</body>
+</html>
