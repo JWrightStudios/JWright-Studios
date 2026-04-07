@@ -3,340 +3,261 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wright Crafts | Custom Creations</title>
+  <title>JWright Studios</title>
   <style>
     :root {
-      --pink: #e91e63;
-      --gold: #d4af37;
-      --black: #111111;
+      --gold: #7a5a22;
+      --black: #000000;
       --white: #ffffff;
-      --soft: #fff6fa;
-      --gray: #666666;
+      --light: #f4f4f4;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
-      margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       background: var(--white);
       color: var(--black);
-      line-height: 1.6;
     }
 
-    header {
-      background: linear-gradient(135deg, var(--black), #2a2a2a);
-      color: var(--white);
-      padding: 18px 24px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    nav {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .logo {
-      font-size: 1.4rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-    }
-
-    .logo span { color: var(--gold); }
-
-    .nav-links {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      color: var(--white);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .hero {
-      background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.4)), url('https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&w=1600&q=80') center/cover;
-      color: var(--white);
+    .top-bar {
+      background: #efefef;
+      border-radius: 18px;
+      width: min(94%, 1200px);
+      margin: 16px auto;
       text-align: center;
-      padding: 90px 20px;
+      padding: 10px 16px;
+      color: #666;
+      font-size: 0.95rem;
     }
 
-    .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      margin-bottom: 14px;
+    .hero-wrapper {
+      width: min(94%, 1200px);
+      margin: 0 auto;
+      border: 1px solid #ddd;
+      background: #fff;
+      min-height: 600px;
+      overflow: hidden;
     }
 
-    .hero p {
-      max-width: 700px;
-      margin: 0 auto 24px;
-      font-size: 1.05rem;
+    .hero-banner {
+      width: 100%;
+      display: block;
     }
 
-    .btn {
+    .marquee-nav {
+      background: var(--black);
+      color: var(--white);
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 12px 0;
+      border-top: 4px solid var(--black);
+      border-bottom: 4px solid var(--black);
+    }
+
+    .marquee-track {
       display: inline-block;
-      padding: 12px 22px;
-      border-radius: 999px;
-      text-decoration: none;
+      min-width: 200%;
+      animation: scroll 22s linear infinite;
       font-weight: 700;
-      margin: 6px;
+      letter-spacing: 2px;
+      color: var(--white);
+      font-size: 1rem;
     }
 
-    .btn-primary {
-      background: var(--pink);
+    .marquee-track span {
+      margin-right: 28px;
       color: var(--white);
     }
 
-    .btn-secondary {
-      background: var(--gold);
-      color: var(--black);
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
     section {
-      padding: 60px 20px;
-    }
-
-    .container {
-      max-width: 1100px;
+      width: min(94%, 1200px);
       margin: 0 auto;
+      padding: 50px 20px;
     }
 
-    .section-title {
+    h2 {
       text-align: center;
-      margin-bottom: 36px;
-      font-size: 2rem;
+      color: var(--gold);
+      margin-bottom: 30px;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      letter-spacing: 1px;
     }
 
-    .section-title span { color: var(--pink); }
+    .intro {
+      text-align: center;
+      max-width: 850px;
+      margin: 0 auto 20px;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
 
-    .categories,
-    .products,
-    .reviews {
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 22px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      margin-top: 25px;
     }
 
     .card {
-      background: var(--white);
-      border: 1px solid #eee;
+      background: #fff;
+      border: 1px solid #e5e5e5;
       border-radius: 18px;
       overflow: hidden;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.06);
     }
 
     .card img {
       width: 100%;
-      height: 220px;
+      height: 260px;
       object-fit: cover;
       display: block;
+      background: #f6f6f6;
     }
 
     .card-content {
       padding: 18px;
+      text-align: center;
     }
 
-    .price {
-      color: var(--pink);
-      font-size: 1.15rem;
+    .card-content h3 {
+      margin-bottom: 10px;
+      color: var(--gold);
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 14px;
+      background: var(--gold);
+      color: var(--white);
+      text-decoration: none;
+      padding: 12px 22px;
+      border-radius: 999px;
       font-weight: 700;
-      margin: 10px 0;
     }
 
-    .soft-section {
-      background: var(--soft);
-    }
-
-    .about {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      align-items: center;
-    }
-
-    .about img {
-      width: 100%;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    }
-
-    .contact-box {
-      max-width: 700px;
+    .about-box, .contact-box {
+      max-width: 850px;
       margin: 0 auto;
-      background: var(--white);
-      border-radius: 20px;
-      padding: 28px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    }
-
-    form {
-      display: grid;
-      gap: 14px;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 14px;
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      font-size: 1rem;
+      text-align: center;
+      line-height: 1.8;
+      font-size: 1.05rem;
     }
 
     footer {
       background: var(--black);
       color: var(--white);
       text-align: center;
-      padding: 25px 20px;
+      padding: 28px 20px;
+      margin-top: 40px;
     }
 
-    .small {
-      color: var(--gray);
-      font-size: 0.95rem;
-    }
+    @media (max-width: 768px) {
+      .hero-wrapper {
+        min-height: auto;
+      }
 
-    @media (max-width: 700px) {
-      .hero { padding: 70px 18px; }
-      .card img { height: 200px; }
+      .card img {
+        height: 220px;
+      }
+
+      .marquee-track {
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <div class="logo">Wright <span>Crafts</span></div>
-      <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#shop">Shop</a>
-        <a href="#about">About</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
-  </header>
+  <div class="top-bar">www.jwright.store</div>
 
-  <section class="hero" id="home">
-    <div class="container">
-      <h1>Custom Crafts Made With Style</h1>
-      <p>Shop handmade party items, personalized gifts, event decor, and custom creations made to stand out.</p>
-      <a class="btn btn-primary" href="#shop">Shop Best Sellers</a>
-      <a class="btn btn-secondary" href="#contact">Request a Custom Order</a>
+  <div class="hero-wrapper">
+    <img src="banner.png" alt="JWright Studios Banner" class="hero-banner" />
+  </div>
+
+  <div class="marquee-nav">
+    <div class="marquee-track">
+      <span>DESIGN</span>
+      <span>PRINT</span>
+      <span>DELIVER</span>
+      <span>DESIGN</span>
+      <span>PRINT</span>
+      <span>DELIVER</span>
+      <span>DESIGN</span>
+      <span>PRINT</span>
+      <span>DELIVER</span>
+      <span>DESIGN</span>
+      <span>PRINT</span>
+      <span>DELIVER</span>
+    </div>
+  </div>
+
+  <section>
+    <h2>Welcome to JWright Studios</h2>
+    <p class="intro">
+      From your vision to your finished product, JWright Studios brings your custom ideas to life.
+      We create bold, beautiful items for celebrations, businesses, gifts, and everyday branding needs.
+    </p>
+  </section>
+
+  <section>
+    <h2>Featured Items</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=900&q=80" alt="Custom shirts" />
+        <div class="card-content">
+          <h3>Custom Apparel</h3>
+          <p>Shirts and wearable designs made for events, businesses, teams, and personal style.</p>
+          <a href="#contact" class="btn">Order Now</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=900&q=80" alt="Party items" />
+        <div class="card-content">
+          <h3>Party Creations</h3>
+          <p>Custom decor, keepsakes, and party pieces made to stand out at every event.</p>
+          <a href="#contact" class="btn">Order Now</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=900&q=80" alt="Gift items" />
+        <div class="card-content">
+          <h3>Personalized Gifts</h3>
+          <p>Thoughtful custom pieces for birthdays, graduations, memorials, and special moments.</p>
+          <a href="#contact" class="btn">Order Now</a>
+        </div>
+      </div>
     </div>
   </section>
 
   <section>
-    <div class="container">
-      <h2 class="section-title">Shop by <span>Category</span></h2>
-      <div class="categories">
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=900&q=80" alt="Party Decor" />
-          <div class="card-content">
-            <h3>Party Decor</h3>
-            <p>Backdrops, treat tables, centerpieces, and event details that pop.</p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=900&q=80" alt="Custom Gifts" />
-          <div class="card-content">
-            <h3>Custom Gifts</h3>
-            <p>Personalized keepsakes for birthdays, weddings, baby showers, and more.</p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=900&q=80" alt="Apparel" />
-          <div class="card-content">
-            <h3>Custom Apparel</h3>
-            <p>T-shirts, matching sets, and wearable designs for every occasion.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="shop" class="soft-section">
-    <div class="container">
-      <h2 class="section-title">Best <span>Sellers</span></h2>
-      <div class="products">
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=900&q=80" alt="Custom Party Bundle" />
-          <div class="card-content">
-            <h3>Custom Party Bundle</h3>
-            <p>Includes themed decor pieces customized to your event.</p>
-            <div class="price">From $85</div>
-            <a class="btn btn-primary" href="#contact">Order Now</a>
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80" alt="Personalized Gift Box" />
-          <div class="card-content">
-            <h3>Personalized Gift Box</h3>
-            <p>Elegant keepsake packaging with custom names, colors, and themes.</p>
-            <div class="price">From $40</div>
-            <a class="btn btn-primary" href="#contact">Order Now</a>
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=900&q=80" alt="Custom Shirt Set" />
-          <div class="card-content">
-            <h3>Custom Shirt Set</h3>
-            <p>Matching shirt designs for family events, reunions, and parties.</p>
-            <div class="price">From $25</div>
-            <a class="btn btn-primary" href="#contact">Order Now</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="about">
-    <div class="container about">
-      <div>
-        <h2 class="section-title" style="text-align:left; margin-bottom:18px;">About <span>Wright Crafts</span></h2>
-        <p>We create handmade and personalized products that make celebrations feel extra special. From party decor to custom gifts, every item is designed with care and creativity.</p>
-        <p class="small">Add your own story here so customers know who you are, what you create, and why your business is special.</p>
-      </div>
-      <div>
-        <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=1000&q=80" alt="Craft workspace" />
-      </div>
-    </div>
-  </section>
-
-  <section id="reviews" class="soft-section">
-    <div class="container">
-      <h2 class="section-title">Customer <span>Love</span></h2>
-      <div class="reviews">
-        <div class="card"><div class="card-content"><p>“My custom party decor came out beautiful and got so many compliments.”</p><strong>- Happy Customer</strong></div></div>
-        <div class="card"><div class="card-content"><p>“Fast communication, great quality, and everything matched my theme perfectly.”</p><strong>- Repeat Customer</strong></div></div>
-        <div class="card"><div class="card-content"><p>“The personalized gift box was even prettier in person. I will definitely order again.”</p><strong>- New Client</strong></div></div>
-      </div>
+    <h2>About</h2>
+    <div class="about-box">
+      JWright Studios is your custom design and printing brand focused on turning ideas into finished products.
+      Whether you need custom apparel, party items, branded pieces, or specialty creations, this site can be tailored to match exactly what you sell.
     </div>
   </section>
 
   <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Place a <span>Custom Order</span></h2>
-      <div class="contact-box">
-        <form>
-          <input type="text" placeholder="Your Name" />
-          <input type="email" placeholder="Your Email" />
-          <input type="text" placeholder="What do you want to order?" />
-          <textarea rows="5" placeholder="Tell me your theme, colors, quantity, and deadline"></textarea>
-          <button class="btn btn-primary" type="button">Send Inquiry</button>
-        </form>
-        <p class="small">Replace this form later with your real email form, Shopify link, Square checkout, or order form.</p>
-      </div>
+    <h2>Contact</h2>
+    <div class="contact-box">
+      Ready to place an order? Add your email, order form, or checkout link here next.
     </div>
   </section>
 
   <footer>
-    <p>© 2026 Wright Crafts. All rights reserved.</p>
+    <p>© 2026 JWright Studios. All rights reserved.</p>
   </footer>
 </body>
 </html>
